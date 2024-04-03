@@ -6,7 +6,7 @@ Directly comparing and subtracting two networks can result in the loss of a lot 
 
 ## Requirements
 
-Our code is based on Python 3.10.13 and the following package versions:
+Our code is based on Python 3.10.13. Details on the versions of the required packages are provided below:
 
 ```bash
 matplotlib                    3.8.1
