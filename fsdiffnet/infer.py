@@ -6,9 +6,7 @@ import os
 from fsdiffnet.utils import vec2mat
 
 def get_model_path(model_name):
-    # 获取当前文件的目录
     current_dir = os.path.dirname(__file__)
-    # 构建模型文件的完整路径
     model_path = os.path.join(current_dir, 'models', model_name)
     return model_path
 
