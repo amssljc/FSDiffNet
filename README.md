@@ -6,6 +6,8 @@ Directly comparing and subtracting two networks can result in the loss of a lot 
 
 ## Requirements
 
+### Python requirements
+
 Our code is based on Python 3.10.13. Details on the versions of the required packages are provided below:
 
 ```bash
@@ -24,6 +26,41 @@ torchaudio                    0.12.1+cu113
 torchvision                   0.13.1+cu113
 tqdm                          4.66.1
 wandb                         0.16.5
+```
+
+### R requirements
+
+`rpy2` enables the invocation of the `BDgraph` R package for generating simulation data. We recommend using `R-4.3.1`.
+
+Install [R language](https://www.r-project.org/) and then install R packages as follows:
+
+```r
+install.packages( "BDgraph" )
+```
+
+### Note
+
+If you have multiple versions of R installed, specify the version associated with the above packages using:
+
+```python
+import os
+os.environ["R_HOME"] = "your path to R"
+```
+
+## Installation
+
+One line for installation:
+
+```bash
+pip install fsdiffnet
+```
+
+You can also install the packages locally by downloading our repository:
+
+```bash
+git clone https://github.com/amssljc/FSDiffNet.git
+cd FSDiffNet
+pip install -e .
 ```
 
 ## Quickstart
@@ -86,3 +123,13 @@ We have provided two real data cases related to the paper as reproducible result
 1. [ABIDE](./notebooks/ABIDE.ipynb)
 2. [BRCA](./notebooks/BRCA.ipynb)
 3. [Flip error](./notebooks/quickstart.ipynb)
+
+## Neural Network Paramaters
+
+We've incorporated pre-trained neural network parameters in the package to facilitate rapid and convenient inference, which can be directly executed with:
+
+```python
+inferred_mat = infer_differential_graph(input)
+```
+
+Alternatively, you have the option to train your own network parameters by executing `main.py`.

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='fsdiffnet',
-    version='0.1',
+    version='0.11',
     author='Jiacheng Leng',
     author_email='jcleng@zhejianglab.com',
     packages=find_packages(),

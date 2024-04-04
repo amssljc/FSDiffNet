@@ -11,7 +11,7 @@ def get_model_path(model_name):
     return model_path
 
 
-def infer_differential_graph(input:torch.Tensor, scale='normal', para_file = 'default', device =  'cuda:0'):
+def infer_differential_graph(input:torch.Tensor, scale='normal', para_file = 'normal', device =  'cuda:0'):
     """
     Infer the differential graph from the input correlation matrices.
 
@@ -24,9 +24,12 @@ def infer_differential_graph(input:torch.Tensor, scale='normal', para_file = 'de
         model = FSDiffNet()
     elif scale == 'large':
         model = FSDiffNet_500()
+    if para_file == 'ABIDE':
+        assert isinstance(model, FSDiffNet), "scale should be 'normal'."
+    if para_file == 'BRCA':
+        assert isinstance(model, FSDiffNet), "scale should be 'large'."
         
     model = DataParallel(model)
-    assert para_file in ['default', 'ABIDE', 'BRCA'], "please choose a model name in ['default', 'ABIDE', 'BRCA']."
     model_name = para_file + '.pt'
     model_path = get_model_path(model_name)
     model.load_state_dict(
