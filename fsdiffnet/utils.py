@@ -474,11 +474,8 @@ def seed_everything(seed):
     import numpy as np
     import torch
 
-    # Set the random seed manually for reproducibility.
     torch.manual_seed(seed)
-    # Set the random seed manually for reproducibility.
     np.random.seed(seed)
-    # Set the random seed manually for reproducibility.
     random.seed(seed)
 
 def calculate_flip_error(inferred_matrices):
