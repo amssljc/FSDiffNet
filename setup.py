@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='fsdiffnet',
-    version='0.11',
+    version='0.12',
     author='Jiacheng Leng',
     author_email='jcleng@zhejianglab.com',
     packages=find_packages(),
@@ -12,7 +12,6 @@ setup(
         ],
     },
     install_requires=[
-        # 你的包依赖的其他包列表
         'matplotlib',
         'nilearn',
         'networkx',
