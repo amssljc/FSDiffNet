@@ -150,7 +150,7 @@ print("Constructing the network......")
 model = FSDiffNet()
 model = DataParallel(model).to(device)
 
-# 预训练
+# transfer the paramters from the pretrained model
 if config.pretrain:
     net_pretrain = DeepNet_baseline().to(device)
     net_pretrain = DataParallel(net_pretrain)

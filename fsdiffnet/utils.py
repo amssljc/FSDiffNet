@@ -148,9 +148,7 @@ def split_pn(x):
 
 
 def evaluate(output, target, k=10):
-    # 标签转化为 0-1 label：
     target = (target != 0).float()
-    # 输出转化为绝对值
     output = torch.abs(output)
     aupr = AUPR(output, target)
     auc = AUC(output, target)
@@ -159,7 +157,6 @@ def evaluate(output, target, k=10):
 
 
 def evaluate_new(output, target, k=10):
-    # 标签转化为 0-1 label：
     target = target.sign()
     output = output.cpu().detach()
     # caluculate positive label and negtive label metrics respectively.
@@ -235,11 +232,12 @@ def show_matrix(matrix, ax=None, labels=None, title=None, figsize=(6, 5)):
         vmax = torch.max(torch.abs(matrix))
     else:
         vmax = np.max(np.abs(matrix))
-    plt.figure(figsize=figsize)
+    
     cmap = sns.diverging_palette(260, 10, as_cmap=True)
     if labels == None:
         labels = range(matrix.shape[-1])
     if ax == None:
+        plt.figure(figsize=figsize)
         ax = sns.heatmap(
             matrix,
             cmap=cmap,

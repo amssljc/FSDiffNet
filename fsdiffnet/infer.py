@@ -27,7 +27,7 @@ def infer_differential_graph(input:torch.Tensor, scale='normal', para_file = 'no
     if para_file == 'ABIDE':
         assert isinstance(model, FSDiffNet), "scale should be 'normal'."
     if para_file == 'BRCA':
-        assert isinstance(model, FSDiffNet), "scale should be 'large'."
+        assert isinstance(model, FSDiffNet_500), "scale should be 'large'."
         
     model = DataParallel(model)
     model_name = para_file + '.pt'

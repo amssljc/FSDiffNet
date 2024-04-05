@@ -8,35 +8,52 @@ Directly comparing and subtracting two networks can result in the loss of a lot 
 
 ### Python requirements
 
-Our code is based on Python 3.10.13. Details on the versions of the required packages are provided below:
+To avoid conflicts between packages, we recommend that you first create a brand new virtual environment before proceeding with the package installation:
 
 ```bash
-matplotlib                    3.8.1
-nilearn                       0.10.3
-networkx                      3.2.1
-numpy                         1.26.1
-pandas                        2.1.1
-progressbar2                  4.4.2
-rpy2                          3.4.5
-scikit-learn                  1.3.2
-scipy                         1.11.3
-seaborn                       0.12.2
-torch                         1.12.1+cu113
-torchaudio                    0.12.1+cu113
-torchvision                   0.13.1+cu113
-tqdm                          4.66.1
-wandb                         0.16.5
+conda create --name fsdiffnet python=3.10.13
 ```
+
+and then activate the virtual environment:
+
+```bash
+conda activate fsdiffnet
+```
+
+Details on the versions of the required packages are provided in [requirements.txt](./requirements.txt)
+
+We recommend you follow the steps below for Python package installation:
+
+1. Install [pytorch](https://pytorch.org/) first according to your CUDA version;\
+    or  if your CUDA version > 11.3, you can install using the following command:
+
+    ```bash
+    pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
+    ```
+
+2. Install the dependencies using requirements.txt.
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ### R requirements
 
 `rpy2` enables the invocation of the `BDgraph` R package for generating simulation data. We recommend using `R-4.3.1`.
 
-Install [R language](https://www.r-project.org/) and then install R packages as follows:
+We recommend you follow the steps below for Python package installation:
 
-```r
-install.packages( "BDgraph" )
-```
+1. Install R in your conda environment:
+
+    ```bash
+    conda install -c conda-forge r-base=4.3.1
+    ```
+
+2. Install `BDgraph` R package.
+
+    ```r
+    conda install -c conda-forge r-BDgraph
+    ```
 
 ### Note
 
