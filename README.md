@@ -48,7 +48,7 @@ We recommend you follow the steps below for Python package installation:
 1. Install R in your conda environment:
 
     ```bash
-    conda install -c conda-forge r-base=4.3.1
+    conda install -c conda-forge r-base
     ```
 
 2. Install `BDgraph` R package.
