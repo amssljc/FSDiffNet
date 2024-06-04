@@ -8,8 +8,6 @@ Directly comparing and subtracting two networks can result in the loss of a lot 
 
 ## Requirements
 
-### Python requirements
-
 To avoid conflicts between packages, we recommend that you first create a brand new virtual environment before proceeding with the package installation:
 
 ```bash
@@ -22,6 +20,26 @@ and then activate the virtual environment:
 conda activate fsdiffnet
 ```
 
+### R requirements
+
+`rpy2` enables the invocation of the `BDgraph` R package for generating simulation data. We recommend using `R-4.3.1`.
+
+We recommend you follow the steps below for R package installation:
+
+1. Install R in your conda environment:
+
+    ```bash
+    conda install -c conda-forge r-base
+    ```
+
+2. Install `BDgraph` R package.
+
+    ```r
+    conda install -c conda-forge r-BDgraph
+    ```
+    
+### Python requirements
+    
 Details on the versions of the required packages are provided in [requirements.txt](./requirements.txt)
 
 We recommend you follow the steps below for Python package installation:
@@ -39,23 +57,7 @@ We recommend you follow the steps below for Python package installation:
     pip install -r requirements.txt
     ```
 
-### R requirements
 
-`rpy2` enables the invocation of the `BDgraph` R package for generating simulation data. We recommend using `R-4.3.1`.
-
-We recommend you follow the steps below for Python package installation:
-
-1. Install R in your conda environment:
-
-    ```bash
-    conda install -c conda-forge r-base
-    ```
-
-2. Install `BDgraph` R package.
-
-    ```r
-    conda install -c conda-forge r-BDgraph
-    ```
 
 ### Note
 
